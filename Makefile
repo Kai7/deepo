@@ -1,8 +1,7 @@
-DOCKER_FILE=Dockerfile.deepo_dev
-#DOCKER_FILE=Dockerfile.pytorch_tensorflow
-#DOCKER_FILE=Dockerfile
+DOCKER_FILE=Dockerfile.deepo_base
+IMAGE_NAME=deepo-base
+CONTAINER_NAME="deepo-base"
 DOCKER=nvidia-docker
-IMAGE_NAME=deepo-env
 #REPO_ROOT?=$(shell dirname `pwd`)
 #DOCKER_ENV_REPO_ROOT=/camera_projection
 #$(info $$REPO_ROOT is [${REPO_ROOT}])
@@ -17,7 +16,6 @@ MOUNT_DIR= -v /home/kai7/data:/data_host
 
 MOUNT_WEBCAM=--device /dev/video0:/dev/video0
 
-CONTAINER_NAME="deepo-dev"
 
 .PHONY: build bash x11 start exec
 
